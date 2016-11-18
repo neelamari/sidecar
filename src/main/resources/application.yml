@@ -1,0 +1,11 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: sidecar
+
+sidecar:
+  port: ${port:3000}
+  health-uri: http://sidecar.mybluemix.net:${sidecar.port}/${health-uri:health.json}
+  home-page-uri: http://sidecar.mybluemix.net:${sidecar.port}/
